@@ -1,7 +1,7 @@
 package observer
 
 import (
-	"github.com/sdkopen/sdkopen-go-webserver/logging"
+	"github.com/sdkopen/sdkopen-go-webbase/logging"
 	"os"
 	"os/signal"
 	"syscall"

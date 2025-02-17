@@ -1,8 +1,8 @@
 package server
 
 import (
-	"github.com/sdkopen/sdkopen-go-webserver/logging"
-	"github.com/sdkopen/sdkopen-go-webserver/observer"
+	"github.com/sdkopen/sdkopen-go-webbase/logging"
+	"github.com/sdkopen/sdkopen-go-webbase/observer"
 )
 
 type restObserver struct {

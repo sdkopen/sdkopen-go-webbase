@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sdkopen/sdkopen-go-webserver/logging"
+	"github.com/sdkopen/sdkopen-go-webbase/logging"
 )
 
 var once sync.Once

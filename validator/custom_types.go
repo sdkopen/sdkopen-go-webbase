@@ -2,7 +2,7 @@ package validator
 
 import (
 	"github.com/google/uuid"
-	"github.com/sdkopen/sdkopen-go-webserver/types"
+	"github.com/sdkopen/sdkopen-go-webbase/types"
 )
 
 func registerCustomTypes() {

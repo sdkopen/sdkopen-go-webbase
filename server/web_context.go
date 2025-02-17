@@ -4,7 +4,7 @@ import (
 	"context"
 	"mime/multipart"
 
-	"github.com/sdkopen/sdkopen-go-webserver/http"
+	"github.com/sdkopen/sdkopen-go-webbase/http"
 )
 
 type WebContext interface {

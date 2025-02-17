@@ -1,6 +1,6 @@
 package server
 
-import "github.com/sdkopen/sdkopen-go-webserver/http"
+import "github.com/sdkopen/sdkopen-go-webbase/http"
 
 type RoutePrefix string
 

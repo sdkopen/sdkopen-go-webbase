@@ -3,8 +3,8 @@ package server
 import (
 	"log"
 
-	"github.com/sdkopen/sdkopen-go-webserver/logging"
-	"github.com/sdkopen/sdkopen-go-webserver/observer"
+	"github.com/sdkopen/sdkopen-go-webbase/logging"
+	"github.com/sdkopen/sdkopen-go-webbase/observer"
 )
 
 var (
