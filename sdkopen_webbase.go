@@ -5,7 +5,7 @@ import (
 	"github.com/sdkopen/sdkopen-go-webbase/validator"
 )
 
-func InitializeSdkOpen() {
+func Initialize() {
 	validator.Initialize()
 	observer.Initialize()
 }
