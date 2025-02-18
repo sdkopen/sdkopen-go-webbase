@@ -20,8 +20,8 @@ type Server interface {
 	ListenAndServe() error
 }
 
-func AddRoutes(routes []Route) {
-	SrvRoutes = append(SrvRoutes, routes...)
+func RegisterController(controller Controller) {
+	SrvRoutes = append(SrvRoutes, controller.Routes()...)
 }
 
 func ListenAndServe(server func() Server) {
