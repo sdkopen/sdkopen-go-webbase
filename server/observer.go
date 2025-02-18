@@ -14,8 +14,8 @@ func (o restObserver) Close() {
 		logging.Warn("WaitGroup timed out, forcing close http server")
 	}
 	logging.Info("closing http server")
-	if err := srv.shutdown(); err != nil {
+	if err := Srv.Shutdown(); err != nil {
 		logging.Error("error when closing http server: %v", err)
 	}
-	srv = nil
+	Srv = nil
 }
