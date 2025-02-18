@@ -13,11 +13,11 @@ var (
 )
 
 type Server interface {
-	initialize()
-	shutdown() error
-	injectMiddlewares()
-	injectRoutes()
-	listenAndServe() error
+	Initialize()
+	Shutdown() error
+	InjectMiddlewares()
+	InjectRoutes()
+	ListenAndServe() error
 }
 
 func AddRoutes(routes []Route) {
@@ -26,11 +26,11 @@ func AddRoutes(routes []Route) {
 
 func ListenAndServe(server func() Server) {
 	Srv = server()
-	Srv.initialize()
-	Srv.injectMiddlewares()
-	Srv.injectRoutes()
+	Srv.Initialize()
+	Srv.InjectMiddlewares()
+	Srv.InjectRoutes()
 
 	observer.Attach(restObserver{})
 	logging.Info("Service '%s' running in %d port", "REST-SERVER", 8080)
-	log.Fatal(Srv.listenAndServe())
+	log.Fatal(Srv.ListenAndServe())
 }
