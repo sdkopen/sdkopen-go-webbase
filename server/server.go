@@ -8,8 +8,8 @@ import (
 )
 
 var (
-	srvRoutes []Route
-	srv       Server
+	SrvRoutes []Route
+	Srv       Server
 )
 
 type Server interface {
@@ -21,16 +21,16 @@ type Server interface {
 }
 
 func AddRoutes(routes []Route) {
-	srvRoutes = append(srvRoutes, routes...)
+	SrvRoutes = append(SrvRoutes, routes...)
 }
 
-func ListenAndServe() {
-	srv = createChiServer()
-	srv.initialize()
-	srv.injectMiddlewares()
-	srv.injectRoutes()
+func ListenAndServe(server func() Server) {
+	Srv = server()
+	Srv.initialize()
+	Srv.injectMiddlewares()
+	Srv.injectRoutes()
 
 	observer.Attach(restObserver{})
 	logging.Info("Service '%s' running in %d port", "REST-SERVER", 8080)
-	log.Fatal(srv.listenAndServe())
+	log.Fatal(Srv.listenAndServe())
 }
