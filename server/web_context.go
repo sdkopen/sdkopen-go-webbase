@@ -3,12 +3,15 @@ package server
 import (
 	"context"
 	"mime/multipart"
+	"net/http"
 
-	"github.com/sdkopen/sdkopen-go-webbase/http"
+	webBaseHttp "github.com/sdkopen/sdkopen-go-webbase/http"
 )
 
 type WebContext interface {
 	Context() context.Context
+	Response() http.ResponseWriter
+	Request() *http.Request
 	RequestHeader(key string) []string
 	RequestHeaders() map[string][]string
 	PathParam(key string) string
@@ -24,9 +27,9 @@ type WebContext interface {
 	FormFile(key string) (multipart.File, *multipart.FileHeader, error)
 	AddHeader(key string, value string)
 	AddHeaders(headers map[string]string)
-	Redirect(url string, statusCode http.StatusCode)
+	Redirect(url string, statusCode webBaseHttp.StatusCode)
 	ServeFile(path string)
-	JsonResponse(statusCode http.StatusCode, body any)
-	ErrorResponse(statusCode http.StatusCode, err error)
-	EmptyResponse(statusCode http.StatusCode)
+	JsonResponse(statusCode webBaseHttp.StatusCode, body any)
+	ErrorResponse(statusCode webBaseHttp.StatusCode, err error)
+	EmptyResponse(statusCode webBaseHttp.StatusCode)
 }
